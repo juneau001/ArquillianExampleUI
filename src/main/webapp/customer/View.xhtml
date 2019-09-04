@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="View Customers"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="customerId"/>
+                    <h:outputText value="#{customerController.selected.customerId}" title="Customer Id"/>
+                    <h:outputText value="name"/>
+                    <h:outputText value="#{customerController.selected.name}" title="Name"/>
+                    <h:outputText value="addressline1"/>
+                    <h:outputText value="#{customerController.selected.addressline1}" title="Address 1"/>
+                    <h:outputText value="addressline2"/>
+                    <h:outputText value="#{customerController.selected.addressline2}" title="Address 2"/>
+                    <h:outputText value="city"/>
+                    <h:outputText value="#{customerController.selected.city}" title="City"/>
+                    <h:outputText value="state"/>
+                    <h:outputText value="#{customerController.selected.state}" title="State"/>
+                    <h:outputText value="phone"/>
+                    <h:outputText value="#{customerController.selected.phone}" title="Phone"/>
+                    <h:outputText value="fax"/>
+                    <h:outputText value="#{customerController.selected.fax}" title="Fax"/>
+                    <h:outputText value="email"/>
+                    <h:outputText value="#{customerController.selected.email}" title="Email"/>
+                    <h:outputText value="creditLimit"/>
+                    <h:outputText value="#{customerController.selected.creditLimit}" title="Credit Limit"/>
+                    <h:outputText value="poolId"/>
+                    <h:outputText value="#{customerController.selected.poolId}" title="Pool ID"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{customerController.destroyAndView}" value="Remove"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="Edit"/>
+                <br />
+                <h:commandLink action="#{customerController.prepareCreate}" value="Create" />
+                <br />
+                <h:commandLink action="#{customerController.prepareList}" value="Show All"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="Index"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
